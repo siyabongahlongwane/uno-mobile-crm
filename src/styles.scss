@@ -9,87 +9,115 @@ $black: #000;
 $white: #fff;
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
 
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.unset-height {
+    margin: unset !important;
+}
 // Colours
 .primary-color {
-    color: $primary
+  color: $primary
 }
+
 .secondary-color {
-    color: $secondary
+  color: $secondary
 }
+
 .tertiary-color {
-    color: $tertiary
+  color: $tertiary
 }
+
 .black-color {
-    color: $black
+  color: $black
 }
+
 .white-color {
-    color: $white
+  color: $white
 }
 
 // Backgrounds
 .primary-bg {
-    background-color: $primary
+  background-color: $primary
 }
+
 .secondary-bg {
-    background-color: $secondary
+  background-color: $secondary
 }
+
 .tertiary-bg {
-    background-color: $tertiary
+  background-color: $tertiary
 }
+
 .black-bg {
-    background-color: $black
+  background-color: $black
 }
+
 .white-bg {
-    background-color: $white
+  background-color: $white
 }
 
 // Sizing 
-.full-vh, .page-wrapper  {
-    height: 100vh;
+.full-vh,
+.page-wrapper {
+  height: 100vh;
 }
 
-.full-height, app-sidenav {
-    height: 100%;
+.full-height,
+app-sidenav {
+  height: 100%;
 }
 
-.block-width, app-sidenav, app-admin-container, app-toolbar {
-    width: 100%;
+.block-width,
+app-sidenav,
+app-admin-container,
+app-toolbar,
+app-dashboard-card {
+  width: 100%;
 }
 
 // Padding
 .pad-xs {
-    padding: .5em;
+  padding: .5em;
 }
 
 .pad-sm {
-    padding: 1em;
+  padding: 1em;
 }
 
 .pad-md-x {
-    padding: 1em 2em;
+  padding: 1em 2em;
 }
 
 // Border Radii
 .border-rad-xs {
-    border-radius: 0.5em;
+  border-radius: 0.5em;
 
 }
 
 .border-rad-sm {
-    border-radius: 1em;
+  border-radius: 1em !important;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .round {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .avatar {
-    border: 2px solid $primary;
+  border: 2px solid $primary !important;
+}
+
+.mini-card {
+   box-shadow: 0px 1px 4px 1px #ffb39d
 }

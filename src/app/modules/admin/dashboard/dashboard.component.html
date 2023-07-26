@@ -1,1 +1,10 @@
-<p>dashboard works!</p>
+<div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px">
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap=".5em" fxFlex="100">
+        <h1><b>Dashboard</b></h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0px">
+            <div *ngFor="let card of cardData"  fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="23">
+                <app-dashboard-card [cardData]="card"></app-dashboard-card>
+            </div>
+        </div>
+    </div>
+</div>
