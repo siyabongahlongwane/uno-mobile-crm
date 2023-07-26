@@ -1,4 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Theme Color
+$primary: #ff6437;
+$secondary: #4e37b2;
+$tertiary: #ebeaf6;
+$black: #000;
+$white: #fff;
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Colours
+.primary-color {
+    color: $primary
+}
+.secondary-color {
+    color: $secondary
+}
+.tertiary-color {
+    color: $tertiary
+}
+.black-color {
+    color: $black
+}
+.white-color {
+    color: $white
+}
+
+// Backgrounds
+.primary-bg {
+    background-color: $primary
+}
+.secondary-bg {
+    background-color: $secondary
+}
+.tertiary-bg {
+    background-color: $tertiary
+}
+.black-bg {
+    background-color: $black
+}
+.white-bg {
+    background-color: $white
+}
+
+// Sizing 
+.full-vh, .page-wrapper  {
+    height: 100vh;
+}
+
+.full-height, app-sidenav {
+    height: 100%;
+}
+
+.block-width, app-sidenav, app-admin-container {
+    width: 100%;
+}
+
+// Padding
+.pad-xs {
+    padding: .5em;
+}
+
+.pad-sm {
+    padding: 1em;
+}
+
+// Border Radii
+.border-rad-xs {
+    border-radius: 0.5em;
+
+}
+.pointer {
+    cursor: pointer;
+}

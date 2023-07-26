@@ -1,0 +1,16 @@
+<div class="full-height pad-sm" fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px">
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1em" fxFlex="100">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="0px">
+            <img src="https://holaofficial.co.za/img/hola-logo.png" width="50%" alt="Hola Logo">
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px">
+            <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap=".5em" fxFlex="100">
+                <div [ngClass]="{'primary-bg white-color border-rad-xs' : item.isCurrent, 'white-bg' : !item.isCurrent}" class="menu-item pad-xs primary-color pointer" *ngFor="let item of menuItems" fxLayout="row"
+                    fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <mat-icon>{{ item.icon }}</mat-icon>
+                    <small><b>{{ item.label | uppercase }}</b></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
