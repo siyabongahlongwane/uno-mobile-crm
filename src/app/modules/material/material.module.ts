@@ -14,6 +14,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatBadgeModule} from '@angular/material/badge';
 
 const MatComponents = [
   MatButtonModule,
@@ -29,7 +30,8 @@ const MatComponents = [
   MatProgressSpinnerModule,
   MatSnackBarModule,
   MatToolbarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatBadgeModule
 ]
 
 
