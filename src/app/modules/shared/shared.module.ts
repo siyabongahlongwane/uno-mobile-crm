@@ -17,6 +17,6 @@ import { DashboardCardComponent } from './dashboard-card/dashboard-card.componen
     MaterialModule,
     FlexLayoutModule,
   ], 
-  exports: [FlexLayoutModule, SidenavComponent, ToolbarComponent, DashboardCardComponent]
+  exports: [FlexLayoutModule, SidenavComponent, ToolbarComponent, DashboardCardComponent, MaterialModule]
 })
 export class SharedModule { }

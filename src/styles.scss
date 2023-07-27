@@ -19,9 +19,12 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.unset-height {
-    margin: unset !important;
+
+.unset-margin,
+.mat-typography h1 {
+  margin-bottom: .5em !important;
 }
+
 // Colours
 .primary-color {
   color: $primary
@@ -39,8 +42,10 @@ body {
   color: $black
 }
 
-.white-color {
-  color: $white
+.white-color,
+.mini-card:hover,
+.mini-card:hover h4 {
+  color: $white !important
 }
 
 // Backgrounds
@@ -119,5 +124,15 @@ app-dashboard-card {
 }
 
 .mini-card {
-   box-shadow: 0px 1px 4px 1px #ffb39d
+  box-shadow: 0px 1px 4px 1px #ffb39d;
+}
+
+.mini-card:hover {
+  box-shadow: 0px 1px 4px 1px $black;
+  background-color: $primary;
+  transition: ease-in-out;
+}
+
+.bold {
+  font-weight: bold !important;
 }
