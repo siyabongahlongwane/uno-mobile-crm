@@ -15,6 +15,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 const MatComponents = [
   MatButtonModule,
@@ -31,7 +34,9 @@ const MatComponents = [
   MatSnackBarModule,
   MatToolbarModule,
   MatSelectModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatTableModule,
+  MatPaginatorModule
 ]
 
 

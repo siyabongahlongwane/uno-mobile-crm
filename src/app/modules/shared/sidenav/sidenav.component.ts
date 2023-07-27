@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,7 +11,7 @@ export class SidenavComponent implements OnChanges {
   
   selectedIndex: number = 0;
 
-  constructor(private router: Router){}
+  constructor(){}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.menuItems = changes?.['menuItems']?.currentValue;

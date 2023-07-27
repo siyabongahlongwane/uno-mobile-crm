@@ -1,0 +1,27 @@
+.table {
+    box-shadow: none;
+    border-collapse: separate;
+    border-spacing: 0 .5em;
+    th.mat-mdc-header-cell,
+    td.mat-mdc-cell,
+    td.mat-mdc-footer-cell {
+        width: 14%;
+        font-size: 12px !important;
+        word-break: normal;
+    }
+    th.mat-header-cell:first-child,
+    td.mat-mdc-cell:first-child,
+    td.mat-footer-cell:first-child {
+        max-width: 150px;
+        text-align: left;
+        padding: 0 .5em;
+        word-break: normal;
+    }
+
+    th.mat-header-cell:last-child,
+    td.mat-mdc-cell:last-child,
+    td.mat-footer-cell:last-child {
+        width: 60px;
+        padding: 0 .5em;
+    }
+}
