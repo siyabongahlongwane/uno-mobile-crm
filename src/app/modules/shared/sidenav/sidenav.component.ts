@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,21 +8,19 @@ import { Router } from '@angular/router';
 })
 export class SidenavComponent implements OnChanges {
   @Input() menuItems: any[] = [];
-  currentRoute: string = '';
+  @Output() nextRouteEvent = new EventEmitter<string>();
+  
+  selectedIndex: number = 0;
+
   constructor(private router: Router){}
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.changeRoute(changes);    
+    this.menuItems = changes?.['menuItems']?.currentValue;
+    this.changeRoute(this.selectedIndex);    
   }
-  changeRoute(changes: any) : void  {
-    this.currentRoute = this.router.url;
-    
-    changes?.['menuItems']?.currentValue.forEach((item: any) => {
-      if(this.currentRoute.includes(item.route)){
-        this.router.navigate([item.route]);
-        item.isCurrent = true;
-      } 
-      else item.isCurrent = false;
-    })
+
+  changeRoute(index: number) : void  {
+    this.selectedIndex = index;
+    this.nextRouteEvent.emit(this.menuItems[this.selectedIndex]['route']);
   }
 }

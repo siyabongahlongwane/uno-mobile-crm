@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-container',
@@ -17,30 +18,36 @@ export class AdminContainerComponent {
       label: 'Orders',
       route: '/admin/orders'
     },
-    {
-      icon: 'smartphone',
-      label: 'Phone Numbers',
-      route: '/admin/phone-numbers'
-    },
-    {
-      icon: 'group',
-      label: 'Users',
-      route: '/admin/users'
-    },
-    {
-      icon: 'drafts',
-      label: 'Manage Emails',
-      route: '/admin/manage-emails'
-    },
-    {
-      icon: 'info',
-      label: 'Requests',
-      route: '/admin/requests'
-    },
-    {
-      icon: 'delete',
-      label: 'Delete my account',
-      route: '/admin/delete-account'
-    },
+    // {
+    //   icon: 'smartphone',
+    //   label: 'Phone Numbers',
+    //   route: '/admin/phone-numbers'
+    // },
+    // {
+    //   icon: 'group',
+    //   label: 'Users',
+    //   route: '/admin/users'
+    // },
+    // {
+    //   icon: 'drafts',
+    //   label: 'Manage Emails',
+    //   route: '/admin/manage-emails'
+    // },
+    // {
+    //   icon: 'info',
+    //   label: 'Requests',
+    //   route: '/admin/requests'
+    // },
+    // {
+    //   icon: 'delete',
+    //   label: 'Delete my account',
+    //   route: '/admin/delete-account'
+    // },
   ];
+
+  constructor(private router: Router){}
+
+  handleRouteChange(evt: any): void {
+    this.router.navigate([evt]);
+  }
 }

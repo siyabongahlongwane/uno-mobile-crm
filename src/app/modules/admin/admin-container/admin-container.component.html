@@ -1,6 +1,6 @@
 <div class="page-wrapper" fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px">
     <div class="full-height" fxLayout="column" fxLayoutAlign="stretch start" fxLayoutGap="0px" fxFlex="225px">
-        <app-sidenav [menuItems]="sidenavItems"></app-sidenav>
+        <app-sidenav (nextRouteEvent)="handleRouteChange($event)" [menuItems]="sidenavItems"></app-sidenav>
     </div>
     <div class="tertiary-bg pad-md-x" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1em" fxFlex>
         <app-toolbar></app-toolbar>
