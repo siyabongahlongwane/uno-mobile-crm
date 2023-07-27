@@ -6,7 +6,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminContainerComponent } from './admin-container/admin-container.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
 @NgModule({
   declarations: [
     AdminContainerComponent,

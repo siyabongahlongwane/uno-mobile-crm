@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './modules/material/material.module';
 import { AdminModule } from './modules/admin/admin.module';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdminModule } from './modules/admin/admin.module';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
-    AdminModule
+    AdminModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
