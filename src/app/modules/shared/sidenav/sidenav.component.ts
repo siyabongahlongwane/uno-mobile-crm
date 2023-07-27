@@ -16,10 +16,12 @@ export class SidenavComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.menuItems = changes?.['menuItems']?.currentValue;
+    this.selectedIndex = JSON.parse(localStorage.getItem('selectedIndex')!) || 0;
     this.changeRoute(this.selectedIndex);    
   }
 
   changeRoute(index: number) : void  {
+    localStorage.setItem('selectedIndex', JSON.stringify(index));
     this.selectedIndex = index;
     this.nextRouteEvent.emit(this.menuItems[this.selectedIndex]['route']);
   }
