@@ -7,7 +7,11 @@ $secondary: #4e37b2;
 $tertiary: #ebeaf6;
 $black: #000;
 $white: #fff;
-
+$lightBlue: #248eb1;
+$navy: #212158;
+$yellow: #ffa500;
+$red: #c20000;
+$green: #149a00;
 
 html,
 body {
@@ -50,23 +54,39 @@ body {
 
 // Backgrounds
 .primary-bg {
-  background-color: $primary
+  background-color: $primary;
 }
 
 .secondary-bg {
-  background-color: $secondary
+  background-color: $secondary;
 }
 
 .tertiary-bg {
-  background-color: $tertiary
+  background-color: $tertiary;
 }
 
 .black-bg {
-  background-color: $black
+  background-color: $black;
 }
 
 .white-bg {
-  background-color: $white
+  background-color: $white;
+}
+
+.green-bg {
+  background-color: $green;
+}
+
+.navy-bg {
+  background-color: $navy;
+}
+
+.red-bg {
+  background-color: $red;
+}
+
+.light-blue-bg {
+  background-color: $lightBlue;
 }
 
 // Sizing 
@@ -135,4 +155,13 @@ app-dashboard-card {
 
 .bold {
   font-weight: bold !important;
+}
+
+.mat-mdc-form-field-infix {
+  min-height: 40px !important;
+}
+
+.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
