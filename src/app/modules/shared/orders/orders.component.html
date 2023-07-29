@@ -16,9 +16,10 @@
                             {{ element[column] | date: 'mediumDate' || '-'}}
                         </span>
                         <span *ngIf="column == 'action'">
-                            <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="2px">
-                                <mat-icon class="material-icons-outlined secondary-color">edit</mat-icon>
-                                <mat-icon class="material-icons-outlined primary-color">delete</mat-icon>
+                            <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="5px">
+                                <mat-icon class="material-icons-outlined blue-color pointer">visibility</mat-icon>
+                                <mat-icon class="material-icons-outlined secondary-color pointer">edit</mat-icon>
+                                <mat-icon class="material-icons-outlined primary-color pointer">delete</mat-icon>
                             </div>
                         </span>
                         <span *ngIf="column == 'amount'">
