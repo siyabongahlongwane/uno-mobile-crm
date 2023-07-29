@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
@@ -15,9 +16,8 @@ export class OrdersComponent {
   dataSource = new MatTableDataSource<any>([]);
   displayedColumns = ['name', 'orderNumber', 'packageName', 'amount', 'status', 'dateOrdered', 'dateDelivered', 'action'];
   headerCells = ['Customer', 'Order Number', 'Package Name', 'Amount', 'Status', 'Date Ordered', 'Date Delivered', 'Action'];
-  orders: any;
+  orders: any[] = [];
 
-  objkeys = Object.keys
   colorConfig: any = {
     'New': 'white-color light-blue-bg',
     'Pending Verification': 'white-color primary-bg',
@@ -25,6 +25,8 @@ export class OrdersComponent {
     'Awaiting Documents': 'white-color red-bg',
     'Delivered': 'white-color green-bg'
   };
+
+  constructor(private router: Router){}
 
   ngOnInit(): void {
   }
@@ -174,6 +176,26 @@ export class OrdersComponent {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  actionHandler(action: string, data?: any){
+    switch (action) {
+      case 'view':
+        this.router.navigate([`admin/orders/${action}/${data?.orderNumber}`]);
+        localStorage.setItem('lastRoute', JSON.stringify(`admin/orders/${action}/${data?.orderNumber}`));
+        break;
+
+      case 'edit':
+      
+        break;
+
+      case 'delete':
+      
+        break;
+    
+      default:
+        break;
     }
   }
 }

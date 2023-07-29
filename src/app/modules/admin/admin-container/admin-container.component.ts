@@ -16,7 +16,8 @@ export class AdminContainerComponent {
     {
       icon: 'sim_card',
       label: 'Orders',
-      route: '/admin/orders'
+      route: '/admin/orders',
+      children: ['/admin/orders/view', '/admin/orders/edit']
     },
     // {
     //   icon: 'smartphone',
@@ -45,7 +46,10 @@ export class AdminContainerComponent {
     // },
   ];
 
-  constructor(private router: Router){}
+  constructor(private router: Router){
+    // const lastRoute = JSON.parse(localStorage.getItem('lastRoute')!);
+    // if (lastRoute && lastRoute?.length > 0) this.handleRouteChange(lastRoute);
+  }
 
   handleRouteChange(evt: any): void {
     this.router.navigate([evt]);

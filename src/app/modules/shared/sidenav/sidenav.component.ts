@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -11,17 +12,28 @@ export class SidenavComponent implements OnChanges {
   
   selectedIndex: number = 0;
 
-  constructor(){}
+  constructor(public router: Router){}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.menuItems = changes?.['menuItems']?.currentValue;
-    this.selectedIndex = JSON.parse(localStorage.getItem('selectedIndex')!) || 0;
-    this.changeRoute(this.selectedIndex);    
+    this.selectedIndex = JSON.parse(localStorage.getItem('selectedIndex')!);   
   }
 
   changeRoute(index: number) : void  {
-    localStorage.setItem('selectedIndex', JSON.stringify(index));
-    this.selectedIndex = index;
-    this.nextRouteEvent.emit(this.menuItems[this.selectedIndex]['route']);
+    this.nextRouteEvent.emit(this.menuItems[index]['route']);
+    
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+             this.menuItems.forEach((item: any, i: number) => {
+              if(this.router.url.includes(item.route)) this.selectedIndex = i;
+              else this.selectedIndex = index;
+    });
+    
+        localStorage.setItem('selectedIndex', JSON.stringify(index));
+      }
+  });
+
+    
+
   }
 }

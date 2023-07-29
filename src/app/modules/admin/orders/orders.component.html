@@ -17,9 +17,9 @@
                         </span>
                         <span *ngIf="column == 'action'">
                             <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="5px">
-                                <mat-icon class="material-icons-outlined blue-color pointer">visibility</mat-icon>
-                                <mat-icon class="material-icons-outlined secondary-color pointer">edit</mat-icon>
-                                <mat-icon class="material-icons-outlined primary-color pointer">delete</mat-icon>
+                                <mat-icon (click)="actionHandler('view', element)" class="material-icons-outlined blue-color pointer">visibility</mat-icon>
+                                <mat-icon (click)="actionHandler('edit', element)" class="material-icons-outlined secondary-color pointer">edit</mat-icon>
+                                <mat-icon (click)="actionHandler('delete', element['_id'])" class="material-icons-outlined primary-color pointer">delete</mat-icon>
                             </div>
                         </span>
                         <span *ngIf="column == 'amount'">
@@ -40,6 +40,6 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>
-        <mat-paginator [pageSize]="20" [pageSizeOptions]="[5, 10, 25, 100]" [length]="orders?.length" aria-label="Select page of users"></mat-paginator>
+        <mat-paginator [pageSize]="20" [pageSizeOptions]="[5, 10, 25, 100]" [length]="orders.length" aria-label="Select page of users"></mat-paginator>
     </div>
 </div>

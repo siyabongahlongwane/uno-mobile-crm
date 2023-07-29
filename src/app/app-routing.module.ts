@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminContainerComponent } from './modules/admin/admin-container/admin-container.component';
 import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
-import { OrdersComponent } from './modules/shared/orders/orders.component';
+import { OrdersComponent } from './modules/admin/orders/orders.component';
+import { OrderComponent } from './modules/admin/order/order.component';
 
 const routes: Routes = [
   {
@@ -17,12 +18,16 @@ const routes: Routes = [
         path: 'dashboard', component: DashboardComponent
       },
       {
-        path: 'orders', component: OrdersComponent, children: [
+        path: 'orders', children: [
           {
-            path: ':action/:number', component: OrdersComponent
+            path: '', component: OrdersComponent
+          },
+          {
+            path: ':action/:number', component: OrderComponent
           }
         ]
-      }
+      },
+      
     ]
   }
 ];
