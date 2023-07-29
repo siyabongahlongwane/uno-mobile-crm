@@ -12,6 +12,8 @@ $navy: #212158;
 $yellow: #ffa500;
 $red: #c20000;
 $green: #149a00;
+$gray: #f0f0f0;
+$yellow: #ffcb05;
 
 html,
 body {
@@ -52,6 +54,9 @@ body {
   color: $white !important
 }
 
+.yellow-color {
+  color: $yellow;
+}
 // Backgrounds
 .primary-bg {
   background-color: $primary;
@@ -89,6 +94,10 @@ body {
   background-color: $lightBlue;
 }
 
+.gray-bg {
+  background-color: $gray;
+}
+
 // Sizing 
 .full-vh,
 .page-wrapper {
@@ -96,8 +105,12 @@ body {
 }
 
 .full-height,
-app-sidenav {
+app-sidenav, app-order, app-ordered-item, app-order-summary {
   height: 100%;
+}
+
+.content-height {
+  height: calc(100vh - 70px - 2em);
 }
 
 .block-width,
@@ -155,6 +168,10 @@ app-dashboard-card {
 
 .bold {
   font-weight: bold !important;
+}
+
+.font-weight-500, app-ordered-item h4 {
+  font-weight: 500 !important;
 }
 
 .mat-mdc-form-field-infix {

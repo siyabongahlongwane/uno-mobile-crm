@@ -36,12 +36,24 @@ export class OrdersComponent {
       {
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
+        "packageName": "Hola Nkalakatha",
         "amount": "99",
         "status": "Awaiting Documents",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
-        "action": ""
+        "action": "",
+        "address": {
+          "shipping": {
+            "street": "4 Turkmenistan",
+            "city": "Roodepoort",
+            "code": "2188"
+          },
+          "billing": {
+            "street": "4 Turkmenistan",
+            "city": "Roodepoort",
+            "code": "2188"
+          }
+        }
       },
       {
         "name": "Siyabonga Hlongwane",
@@ -183,7 +195,7 @@ export class OrdersComponent {
     switch (action) {
       case 'view':
         this.router.navigate([`admin/orders/${action}/${data?.orderNumber}`]);
-        localStorage.setItem('lastRoute', JSON.stringify(`admin/orders/${action}/${data?.orderNumber}`));
+        localStorage.setItem('package', JSON.stringify(data));
         break;
 
       case 'edit':

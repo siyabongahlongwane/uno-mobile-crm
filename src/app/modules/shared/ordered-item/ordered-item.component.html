@@ -1,0 +1,38 @@
+<div class="gray-bg pad-sm" fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="100%">
+    <div class="full-height" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1.5em" fxFlex="100">
+        <h2 class="unset-margin">Order Details</h2>
+
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+            <img width="60px" src="../../../../assets/img/mtn-sim-500x500.png" alt="MTN Sim">
+
+            <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="0px" fxFlex="45">
+                <h3 class="unset-height"><b>{{ orderDetails.packageName }}</b></h3>
+                <span>Month-to-month plan</span>
+            </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px">
+            <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="5px" fxFlex="100">
+                <div class="block-width" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="5px">
+                    <h4>SUBTOTAL INCL VAT</h4>
+                    <h4>R{{ orderDetails?.amount }}</h4>
+                </div>
+                
+                <div class="block-width" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="5px">
+                    <h4>SHIPPING</h4>
+                    <h4>R{{ orderDetails?.shipping || 0 }}</h4>
+                </div>
+                
+                <div class="block-width" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="5px">
+                    <h4>OFF WHICH VAT 15%</h4>
+                    <h4>R{{ (orderDetails?.amount * .15).toFixed(2) }}</h4>
+                </div>
+                
+                <div class="block-width" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                    <h4><b>TOTAL PRICE</b></h4>
+                    <h1><b>R{{ orderDetails?.amount }}</b> </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
