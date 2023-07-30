@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
   orderDetails: any = {packageName: '', amoount: 0};
+  orderSummary: any = {};
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class OrderComponent implements OnInit {
       packageName: data?.packageName,
       amount: data?.amount
     }
-    
+
+    this.orderSummary = data;
   }
 }

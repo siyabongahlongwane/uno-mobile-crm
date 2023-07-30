@@ -41,19 +41,32 @@ export class OrdersComponent {
         "status": "Awaiting Documents",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
+        "portDetails": {
+          "requiresPort": false,
+          "portNumber": "076 125 9867",
+          "networkProvider": "Vodacom"
+        },
         "action": "",
         "address": {
           "shipping": {
             "street": "4 Turkmenistan",
             "city": "Roodepoort",
+            "province": "Gauteng",
             "code": "2188"
           },
           "billing": {
             "street": "4 Turkmenistan",
             "city": "Roodepoort",
+            "province": "Gauteng",
             "code": "2188"
           }
-        }
+        },
+        "contactDetails": {
+          "phone": "0786413440",
+          "altPhone": "0870125698",
+          "email": "test@email.co.za"
+        },
+        "owner": "test@email.co.za"
       },
       {
         "name": "Siyabonga Hlongwane",

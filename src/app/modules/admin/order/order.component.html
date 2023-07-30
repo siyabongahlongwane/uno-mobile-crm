@@ -1,13 +1,16 @@
 <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="100%">
-    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1.5em" fxFlex="100">
-        <h1><b>Order #123</b></h1>
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1em" fxFlex="100">
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="0px">
+            <h1 class="remove-margin"><b>Order #{{orderSummary?.orderNumber}}</b></h1>
+            <button routerLink="/admin/orders" mat-raised-button class="primary-bg white-color"><mat-icon>west</mat-icon> Back</button>
+        </div>
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0px" fxFlex="100%">
             <div class="full-height" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px"
                 fxFlex="100">
                 <mat-card class="full-height">
                     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="100">
                         <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="60">
-                            <app-order-summary></app-order-summary>
+                            <app-order-summary [orderSummary]="orderSummary"></app-order-summary>
                         </div>
                         <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="40">
                             <app-ordered-item [orderDetails]="orderDetails"></app-ordered-item>

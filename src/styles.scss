@@ -25,10 +25,8 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-
-.unset-margin,
-.mat-typography h1 {
-  margin-bottom: .5em !important;
+.remove-margin {
+  margin: 0 !important;
 }
 
 // Colours
@@ -59,11 +57,11 @@ body {
 }
 // Backgrounds
 .primary-bg {
-  background-color: $primary;
+  background-color: $primary !important;
 }
 
 .secondary-bg {
-  background-color: $secondary;
+  background-color: $secondary !important;
 }
 
 .tertiary-bg {
@@ -134,6 +132,11 @@ app-dashboard-card {
   padding: 1em 2em;
 }
 
+
+//Margin
+.margin-top-sm {
+  margin-top: 1em;
+}
 // Border Radii
 .border-rad-xs {
   border-radius: 0.5em;

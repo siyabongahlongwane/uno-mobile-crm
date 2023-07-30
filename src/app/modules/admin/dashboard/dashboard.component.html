@@ -1,16 +1,18 @@
 <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px">
-    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1.5em" fxFlex="100">
-        <h1><b>Dashboard</b></h1>
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1em" fxFlex="100">
+        <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px">
+            <h1 class="remove-margin"><b>Dashboard</b></h1>
+        </div>
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0px">
             <div *ngFor="let card of cardData"  fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="23">
                 <app-dashboard-card [cardData]="card"></app-dashboard-card>
             </div>
         </div>
 
-        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0px">
+        <div class="margin-top-sm" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0px">
             <div *ngFor="let chart of charts"  fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="48.5">
                 <mat-card class="pad-sm">
-                    <h2 class="unset-margin primary-color bold">{{ chart.title }}</h2>
+                    <h2 class="remove-margin primary-color bold">{{ chart.title }}</h2>
                     <canvas baseChart [data]="chart.data" [labels]="chart.labels" [chartType]="chart.type" [colors]="chart.colors" [legend]="chart.type != 'bar' ? true : false" [datasets]="chart.datasets" [options]="chartsOptions">
                     </canvas>
                 </mat-card>
