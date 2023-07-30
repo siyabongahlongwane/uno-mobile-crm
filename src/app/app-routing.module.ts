@@ -4,6 +4,7 @@ import { AdminContainerComponent } from './modules/admin/admin-container/admin-c
 import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
 import { OrdersComponent } from './modules/admin/orders/orders.component';
 import { OrderComponent } from './modules/admin/order/order.component';
+import { EditOrderComponent } from './modules/admin/edit-order/edit-order.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,10 @@ const routes: Routes = [
             path: '', component: OrdersComponent
           },
           {
-            path: ':action/:number', component: OrderComponent
+            path: 'view/:number', component: OrderComponent
+          },
+          {
+            path: 'edit/:number', component: EditOrderComponent
           }
         ]
       },

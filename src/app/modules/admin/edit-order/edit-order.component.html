@@ -1,0 +1,71 @@
+<div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="100%">
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1em" fxFlex="100">
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="0px">
+            <h1 class="remove-margin"><b>Edit Order #{{orderDetails?.orderNumber}}</b></h1>
+            <button routerLink="/admin/orders" mat-raised-button
+                class="primary-bg white-color"><mat-icon>west</mat-icon> Back</button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0px" fxFlex="100%">
+            <div class="full-height" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="100">
+                <mat-card class="full-height">
+                    <div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="0px" fxFlex="100">
+                        <div class="block-width" fxLayout="column" fxLayoutAlign="stretch stretch" fxLayoutGap="0px"
+                            fxFlex="70">
+                            <form fxLayout="column" class="pad-sm" [formGroup]="orderForm" fxLayoutGap="1em">
+                                <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="10px" fxFlex="100">
+                                    <h2 class="remove-margin"><b>Contact Details</b></h2>
+                                </div>
+                                <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" fxLayoutGap="0px">
+                                    <div [fxHide]="true" [fxShow]="false" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="30">
+                                        <mat-form-field [appearance]="'fill'">
+                                            <input required formControlName="name" matInput placeholder="Enter Name">
+                                            <mat-error>Name is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="100">
+                                        <div fxLayout="row wrap" fxLayoutAlign="space-between stretch"
+                                            fxLayoutGap="0px">
+
+                                            <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px"
+                                                fxFlex="30">
+                                                <mat-form-field [appearance]="'fill'">
+                                                    <input required formControlName="name" matInput
+                                                        placeholder="Enter Name">
+                                                    <mat-error>Name is required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px"
+                                                fxFlex="30">
+                                                <mat-form-field [appearance]="'fill'">
+                                                    <input required formControlName="name" matInput
+                                                        placeholder="Enter Name">
+                                                    <mat-error>Name is required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+
+                                            <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0px"
+                                                fxFlex="30">
+                                                <mat-form-field [appearance]="'fill'">
+                                                    <input required formControlName="name" matInput
+                                                        placeholder="Enter Name">
+                                                    <mat-error>Name is required</mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="0px">
+                                    <button (click)="updateForm(orderForm)" routerLink="/admin/orders" mat-raised-button
+                                        class="primary-bg white-color"><mat-icon>edit</mat-icon> Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

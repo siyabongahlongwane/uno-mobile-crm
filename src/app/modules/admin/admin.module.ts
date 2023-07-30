@@ -9,6 +9,8 @@ import { ChartsModule } from 'ng2-charts';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderComponent } from './order/order.component';
+import { EditOrderComponent } from './edit-order/edit-order.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { OrderComponent } from './order/order.component';
     DashboardComponent,
     DashboardCardComponent,
     OrdersComponent,
-    OrderComponent
+    OrderComponent,
+    EditOrderComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     SharedModule,
-    ChartsModule
+    ChartsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

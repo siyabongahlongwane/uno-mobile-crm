@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './modules/material/material.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { ChartsModule } from 'ng2-charts';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChartsModule } from 'ng2-charts';
     FlexLayoutModule,
     MaterialModule,
     AdminModule,
-    ChartsModule
+    ChartsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

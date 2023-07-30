@@ -212,7 +212,8 @@ export class OrdersComponent {
         break;
 
       case 'edit':
-      
+        this.router.navigate([`admin/orders/${action}/${data?.orderNumber}`]);
+        localStorage.setItem('package', JSON.stringify(data));
         break;
 
       case 'delete':

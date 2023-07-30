@@ -93,7 +93,7 @@ body {
 }
 
 .gray-bg {
-  background-color: $gray;
+  background-color: $gray !important;
 }
 
 // Sizing 
@@ -103,7 +103,7 @@ body {
 }
 
 .full-height,
-app-sidenav, app-order, app-ordered-item, app-order-summary {
+app-sidenav, app-order, app-ordered-item, app-order-summary, app-edit-order {
   height: 100%;
 }
 
