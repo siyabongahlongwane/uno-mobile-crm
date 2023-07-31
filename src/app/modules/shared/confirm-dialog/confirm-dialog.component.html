@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="0px" fxFlex="100%">
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0em" fxFlex="100">
+        <div class="primary-bg pad-sm" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="0px">
+            <h2 class="remove-margin"><b class="white-color">Confirm Action</b></h2>
+            <mat-icon class="white-color pointer" mat-dialog-close>close</mat-icon>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="0px" fxFlex="100%">
+            <div class="full-height pad-sm" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap=".5em" fxFlex="100">
+                <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="0px">
+                    <h1 class="text-center"><b>{{ data?.msg }}</b></h1>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="0px" fxFlex="100">
+                    <div fxLayout="column" fxLayoutAlign="stretch stretch" fxLayoutGap="0px" fxFlex="45">
+                        <button [mat-dialog-close]="true" mat-raised-button
+                            class="primary-bg white-color block-width">Confirm</button>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="stretch stretch" fxLayoutGap="0px" fxFlex="45">
+                        <button [mat-dialog-close]="false" mat-raised-button color="warn"
+                            class="white-color block-width">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

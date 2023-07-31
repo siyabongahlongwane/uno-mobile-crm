@@ -5,6 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { EditOrderComponent } from '../edit-order/edit-order.component';
+import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-orders',
@@ -281,7 +282,16 @@ export class OrdersComponent {
         break;
 
       case 'delete':
-      
+        dialogData.msg = 'Are you sure you want to delete this order?'
+        let confirmDialog = this.dialog.open(ConfirmDialogComponent, {
+          width: '350px',
+          hasBackdrop: true,
+          disableClose: true,
+          data: dialogData
+        });
+        confirmDialog.afterClosed().subscribe((res): any => {
+          if(res) this.deleteOrder(data);
+        })
         break;
     
       default:
@@ -291,5 +301,9 @@ export class OrdersComponent {
 
   updateOrder(updateData: any): void{
     updateData.package = this.packages.find((packageObj: any) => packageObj.name == updateData.package);
+  }
+
+  deleteOrder(orderToDelete: any): void{
+    console.log('Deleted order', orderToDelete);
   }
 }

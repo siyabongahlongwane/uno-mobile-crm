@@ -19,7 +19,7 @@
                             <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="5px">
                                 <mat-icon (click)="actionHandler('view', element)" class="material-icons-outlined blue-color pointer">visibility</mat-icon>
                                 <mat-icon (click)="actionHandler('edit', element)" class="material-icons-outlined secondary-color pointer">edit</mat-icon>
-                                <mat-icon (click)="actionHandler('delete', element['_id'])" class="material-icons-outlined primary-color pointer">delete</mat-icon>
+                                <mat-icon (click)="actionHandler('delete', element)" class="material-icons-outlined primary-color pointer">delete</mat-icon>
                             </div>
                         </span>
                         <span *ngIf="column == 'package'">

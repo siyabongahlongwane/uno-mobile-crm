@@ -6,19 +6,21 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { OrderedItemComponent } from './ordered-item/ordered-item.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     SidenavComponent,
     ToolbarComponent,
     OrderSummaryComponent,
-    OrderedItemComponent
+    OrderedItemComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
   ], 
-  exports: [FlexLayoutModule, SidenavComponent, ToolbarComponent, MaterialModule, OrderSummaryComponent, OrderedItemComponent]
+  exports: [FlexLayoutModule, SidenavComponent, ToolbarComponent, MaterialModule, OrderSummaryComponent, OrderedItemComponent, ConfirmDialogComponent]
 })
 export class SharedModule { }
