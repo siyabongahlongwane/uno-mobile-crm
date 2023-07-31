@@ -22,13 +22,16 @@
                                 <mat-icon (click)="actionHandler('delete', element['_id'])" class="material-icons-outlined primary-color pointer">delete</mat-icon>
                             </div>
                         </span>
+                        <span *ngIf="column == 'package'">
+                            {{ element[column]['name'] }}
+                        </span>
                         <span *ngIf="column == 'amount'">
-                            R{{ element[column] }}
+                            R{{ element.package[column] }}
                         </span>
                         <div fxLayout="row" *ngIf="column == 'status'">
                             <span [class]="setChipBackground(element[column])">{{ element[column] }}</span>
                         </div>
-                        <span *ngIf="column !== 'action' && !['dateDelivered', 'dateOrdered'].includes(column) && column !== 'amount' && column !== 'status'">
+                        <span *ngIf="!['action', 'status', 'amount', 'package'].includes(column) && !['dateDelivered', 'dateOrdered'].includes(column)">
                             <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="2px">
                                 {{ element[column] }}
                             </div>

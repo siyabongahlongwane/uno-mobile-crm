@@ -185,3 +185,20 @@ app-dashboard-card {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
+
+::-webkit-scrollbar {
+  background-color: lighten($color: $primary, $amount: 35);
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar,
+.chip {
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb,
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
+  background-color: $primary !important;
+}

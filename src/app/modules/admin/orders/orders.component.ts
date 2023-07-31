@@ -1,8 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { EditOrderComponent } from '../edit-order/edit-order.component';
 
 @Component({
   selector: 'app-orders',
@@ -14,7 +16,7 @@ export class OrdersComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   dataSource = new MatTableDataSource<any>([]);
-  displayedColumns = ['name', 'orderNumber', 'packageName', 'amount', 'status', 'dateOrdered', 'dateDelivered', 'action'];
+  displayedColumns = ['name', 'orderNumber', 'package', 'amount', 'status', 'dateOrdered', 'dateDelivered', 'action'];
   headerCells = ['Customer', 'Order Number', 'Package Name', 'Amount', 'Status', 'Date Ordered', 'Date Delivered', 'Action'];
   orders: any[] = [];
 
@@ -26,7 +28,34 @@ export class OrdersComponent {
     'Delivered': 'white-color green-bg'
   };
 
-  constructor(private router: Router){}
+  packages: any[] = [
+    {
+      "name": "Hola Nkalakatha",
+      "amount": "99"
+    },
+    {
+      "name": "The Hola 20 Steena",
+      "amount": "129"
+    },
+    {
+      "name": "The Hola 30 X nice",
+      "amount": "149"
+    },
+    {
+      "name": "The Hola 4 X 4 Masihlalisane",
+      "amount": "199"
+    },
+    {
+      "name": "The Hola Wonke Bonke",
+      "amount": "599"
+    },
+    {
+      "name": "The Hola Ngamla",
+      "amount": "899"
+    },
+  ];
+  
+  constructor(private router: Router, private dialog: MatDialog, private cd: ChangeDetectorRef){}
 
   ngOnInit(): void {
   }
@@ -36,8 +65,10 @@ export class OrdersComponent {
       {
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Hola Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Hola Nkalakatha",
+            "amount": "99"
+        },
         "status": "Awaiting Documents",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -71,8 +102,10 @@ export class OrdersComponent {
       {
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "In Progress",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -81,8 +114,10 @@ export class OrdersComponent {
       {
       "name": "Siyabonga Hlongwane",
       "orderNumber": "123",
-      "packageName": "Nkalakatha",
-      "amount": "99",
+      "package": {
+          "name": "Nkalakatha",
+          "amount": "99"
+        },
       "status": "Delivered",
       "dateOrdered": 1690494584793,
       "dateDelivered": 1690494584793,
@@ -91,8 +126,10 @@ export class OrdersComponent {
       {
         "name": "Onyinyechukwu Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "Pending Verification",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -100,8 +137,10 @@ export class OrdersComponent {
       },{
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "New",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -110,8 +149,10 @@ export class OrdersComponent {
       {
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "New",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -120,8 +161,10 @@ export class OrdersComponent {
       {
         "name": "Onyinyechukwu Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "Pending Verification",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -129,8 +172,10 @@ export class OrdersComponent {
       },{
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "New",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -139,8 +184,10 @@ export class OrdersComponent {
       {
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "New",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -150,8 +197,10 @@ export class OrdersComponent {
       {
         "name": "Onyinyechukwu Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "Pending Verification",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -159,8 +208,10 @@ export class OrdersComponent {
       },{
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "New",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
@@ -169,19 +220,22 @@ export class OrdersComponent {
       {
         "name": "Siyabonga Hlongwane",
         "orderNumber": "123",
-        "packageName": "Nkalakatha",
-        "amount": "99",
+      "package": {
+            "name": "Nkalakatha",
+            "amount": "99"
+        },
         "status": "New",
         "dateOrdered": 1690494584793,
         "dateDelivered": 1690494584793,
         "action": ""
       }
     ]
-
+    this.cd.detectChanges();
     this.dataSource = new MatTableDataSource<any>([...this.orders]);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+  
   setChipBackground(status: string){
     let elementClass = '';
     Object.keys(this.colorConfig).forEach(orderStatus => {
@@ -205,6 +259,7 @@ export class OrdersComponent {
   }
 
   actionHandler(action: string, data?: any){
+    let dialogData = {...data}; 
     switch (action) {
       case 'view':
         this.router.navigate([`admin/orders/${action}/${data?.orderNumber}`]);
@@ -212,8 +267,17 @@ export class OrdersComponent {
         break;
 
       case 'edit':
-        this.router.navigate([`admin/orders/${action}/${data?.orderNumber}`]);
-        localStorage.setItem('package', JSON.stringify(data));
+        dialogData.package = dialogData.package.name;
+        let editDialog = this.dialog.open(EditOrderComponent, {
+          width: '350px',
+          height: '350px',
+          hasBackdrop: true,
+          disableClose: true,
+          data: dialogData
+        });
+        editDialog.afterClosed().subscribe((res): any => {
+          if(res) this.updateOrder(res);
+        })
         break;
 
       case 'delete':
@@ -223,5 +287,9 @@ export class OrdersComponent {
       default:
         break;
     }
+  }
+
+  updateOrder(updateData: any): void{
+    updateData.package = this.packages.find((packageObj: any) => packageObj.name == updateData.package);
   }
 }

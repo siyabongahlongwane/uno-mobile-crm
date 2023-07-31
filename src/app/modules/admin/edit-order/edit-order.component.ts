@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, UntypedFormControl, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-order',
@@ -7,22 +8,22 @@ import { FormBuilder, FormGroup, UntypedFormControl, Validators } from '@angular
   styleUrls: ['./edit-order.component.scss']
 })
 export class EditOrderComponent {
-  orderDetails: any = {};
   orderForm: any;
-  ngOnInit(): void {
-    this.orderDetails = JSON.parse(localStorage.getItem('package')! || '{}');
-  }
+  statuses: string[] = ['New', 'In Progress', 'Pending Verification', 'Awaiting Documents', 'Delivered'];
+  packages: any = ["Hola Nkalakatha", "The Hola 20 Steena", "The Hola 30 X nice", "The Hola 4 X 4 Masihlalisane", "The Hola Wonke Bonke", "The Hola Ngamla"];
 
-  constructor(private fb: FormBuilder){
+  ngOnInit(): void {}
+
+  constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public orderDetails: any, private dialogRef: MatDialogRef<EditOrderComponent>){
     this.createOrderForm();
-    console.log(this.orderForm.value);
+    this.orderForm.patchValue(this.orderDetails);
   }
 
   createOrderForm(): void{
     this.orderForm = this.fb.group({
       name: new UntypedFormControl(null, Validators.required),
       orderNumber: new UntypedFormControl(null, Validators.required),
-      packageName: new UntypedFormControl(null, Validators.required),
+      package: new UntypedFormControl(null, Validators.required),
       amount: new UntypedFormControl(null, Validators.required),
       status: new UntypedFormControl(null, Validators.required),
       owner: new UntypedFormControl(null, Validators.required),
@@ -45,7 +46,6 @@ export class EditOrderComponent {
   }
 
   updateForm(form: FormGroup): void{
-    console.log(form.value);
-    
+    this.dialogRef.close(form.value);
   }
 }

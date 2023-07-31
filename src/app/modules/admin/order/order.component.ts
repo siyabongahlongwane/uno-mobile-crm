@@ -17,8 +17,8 @@ export class OrderComponent implements OnInit {
   setInputData(): void{
     let data = JSON.parse(localStorage.getItem('package')!) || {};
     this.orderDetails = {
-      packageName: data?.packageName,
-      amount: data?.amount
+      package: data?.package?.name,
+      amount: data?.package?.amount
     }
 
     this.orderSummary = data;
